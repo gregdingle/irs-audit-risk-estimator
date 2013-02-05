@@ -16,6 +16,11 @@
 	<link rel="stylesheet" href="stylesheets/app.css">
 
 	<script src="javascripts/foundation/modernizr.foundation.js"></script>
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-38300423-1']);
+		_gaq.push(['_trackPageview']);
+	</script>
 </head>
 <body>
 
@@ -44,5 +49,14 @@
 
 	<!-- Application Javascript, safe to override -->
 	<script src="javascripts/foundation/app.js"></script>
+	<script src="javascripts/analytics.js"></script>
+
+	<!-- Asynchronous Google Analytics -->
+	<script type="text/javascript">  (function() {
+		var ga = document.createElement('script');     ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:'   == document.location.protocol ? 'https://ssl'   : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
 </body>
 </html>

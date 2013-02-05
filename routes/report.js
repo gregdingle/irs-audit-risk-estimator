@@ -1,6 +1,10 @@
 /*
  * GET report page.
  */
+var pgsql = require('../pgsql').connection; 
+
+var sys = require('sys');
+
 exports.index = function(req, res){
 	
   var totalIncome = req.body.form_1040_total_income, 
@@ -27,8 +31,26 @@ exports.index = function(req, res){
 	if(ratio > 0.67) {
 		return estimate = 'SCHEDULE_F_DEDUCTIONS_GT_67_PERCENT_OF_INCOME';
 	}
-      };
+      },
 
+  // STORE FORM 1040 DATA ON THE DATABASE
+  query = "",
+  values = [];
+
+  query += "INSERT INTO form_1040(total_income,"; 
+  query += "schedule_a_total_itemized_deductions,"; 
+  query += "schedule_c_total_business_expenses,"; 
+  query += "schedule_f_total_farm_expenses) "; 
+  query += "values($1, $2, $3, $4)";
+
+  values.push(totalIncome);
+  values.push(scheduleATotalItemizedDeductions);
+  values.push(scheduleCTotalBusinessExpenses);
+  values.push(scheduleFTotalFarmExpenses);
+
+  pgsql.query(query, values); 
+
+  // CALCULATE IRS AUDIT ESTIMATES
   if(estimate = scheduleATotalItemizedDeductionsGT44PercentOfIncome(
 	  totalIncome, scheduleATotalItemizedDeductions)) {
 	
@@ -47,6 +69,7 @@ exports.index = function(req, res){
 	 estimates.push(estimate); 
   }
 
+  // RENDER THE IRS AUDIT ESTIMATES REPORT
   res.render('report', {
 	estimates: estimates 	    	
   });
