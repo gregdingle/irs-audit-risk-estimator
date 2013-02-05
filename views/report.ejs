@@ -1,0 +1,62 @@
+<% layout('layout') -%>
+<div class="row">
+	<div class="nine columns centered">
+		<h2>IRS TAX AUDIT ESTIMATOR</h2>
+		<hr/>
+		<h5 class="subheader">The IRS TAX AUDIT ESTIMATOR will calculate the probability that you will be audited by the IRS on the model developed by statistician Amir D Aczel. According to the IRS itself, your chance of audit can vary between 0.5% and 20%.</h5>
+		<h4>Calculated Risk Estimates</h4>
+		<% if(!estimates.length) { %>
+			<h5 class="subheader">No relevant calculated estimates found</h5>
+		<% } %>
+		<% for(i=0; i<estimates.length; i++) { 
+			var e = estimates[i]; 
+			if(e == 'SCHEDULE_A_DEDUCTIONS_GT_44_PERCENT_OF_INCOME') { %>
+				<div class="alert-box alert">
+					Schedule A deductions &gt; 44 percent of income:
+					Audit risk is 100%
+				</div>	
+			<% } 
+			if(e == 'SCHEDULE_C_DEDUCTIONS_GT_63_PERCENT_OF_INCOME') { %>	
+				<div class="alert-box alert">
+					Schedule C deductions &gt; 63 percent of income:
+					Audit risk is 100%
+				</div>	
+			<% } 
+			if(e == 'SCHEDULE_F_DEDUCTIONS_GT_67_PERCENT_OF_INCOME') { %>	
+				<div class="alert-box alert">
+					Schedule F deductions &gt; 67 percent of income:
+					Audit risk is 100%
+				</div>	
+			<% } %>
+		<% } %>
+		<h4>Other Risk Estimates</h4>
+		<div class="alert-box secondary">
+			Occupation: business owner 
+			Audit risk is 4%
+		</div>	
+		<div class="alert-box secondary">
+			Occupation: farm owner 
+			Audit risk is 2%
+		</div>	
+		<div class="alert-box secondary">
+			Occupation: business owner 
+			Audit risk is 4%
+		</div>	
+		<div class="alert-box secondary">
+			Income &gt; 100000
+			Audit risk is 5% 
+		</div>	
+		<div class="alert-box secondary">
+			Income &gt; 5000000
+			Audit risk is 12%
+		</div>	
+		<div class="alert-box secondary">
+			Income &gt; 10000000
+			Audit risk is 20%
+		</div>	
+		<div class="alert-box secondary">
+			Return filled after April 15 
+			Audit risk is 0%
+		</div>	
+	</div>
+</div>

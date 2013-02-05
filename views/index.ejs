@@ -1,0 +1,76 @@
+<% layout('layout') -%>
+<div class="irs-audit-estimator">
+	<div class="row">
+		<div class="nine columns centered">
+			<h2>IRS TAX AUDIT ESTIMATOR</h2>
+			<hr/>
+			<h5 class="subheader">The IRS TAX AUDIT ESTIMATOR will calculate the probability that you will be audited by the IRS on the model developed by statistician Amir D Aczel. According to the IRS itself, your chance of audit can vary between 0.5% and 20%.</h5>
+			<form class="custom" action="/report" method="post">
+				<div class="panel">
+					<h4>Form 1040</h4>
+					<div class="row">
+						<div class="twelve columns">
+							<div class="two mobile-one columns">
+								<label class="right inline">Total Income</label>
+							</div>
+							<div class="six mobile-two columns">
+								<input name="form_1040_total_income" type="text" value="0.00">
+							</div>
+							<div class="four mobile-two columns"></div>
+						</div>
+					</div>
+					<div class="panel callout">
+						<h5>Schedule A</h5>
+						<div class="row">
+							<div class="twelve columns">
+								<div class="four mobile-two columns">
+									<label class="right inline">Total Itemized Deductions</label>
+								</div>
+								<div class="six mobile-two columns">
+									<input name="schedule_a_total_itemized_deductions" 
+										type="text" value="0.00">
+								</div>
+								<div class="two mobile-one columns"></div>
+							</div>
+						</div>
+					</div>
+					<div class="panel callout">
+						<h5>Schedule C</h5>
+						<div class="row">
+							<div class="twelve columns">
+								<div class="four mobile-two columns">
+									<label class="right inline">Total Business Expenses</label>
+								</div>
+								<div class="six mobile-two columns">
+									<input name="schedule_c_total_business_expenses" 
+										type="text" value="0.00">
+								</div>
+								<div class="two mobile-one columns"></div>
+							</div>
+						</div>
+					</div>
+					<div class="panel callout">
+						<h5>Schedule F</h5>
+						<div class="row">
+							<div class="twelve columns">
+								<div class="four mobile-one columns">
+									<label class="right inline">Total Farm Expenses</label>
+								</div>
+								<div class="six mobile-two columns">
+									<input name="schedule_f_total_farm_expenses" 
+										type="text" value="0.00">
+								</div>
+								<div class="two mobile-two columns"></div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="two columns offset-by-ten">
+							<input type="submit" class="button" value="Estimate" />
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
