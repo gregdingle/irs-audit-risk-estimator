@@ -3,8 +3,6 @@
  */
 var pgsql = require('../pgsql').connection; 
 
-var sys = require('sys');
-
 exports.index = function(req, res){
 	
   var totalIncome = req.body.form_1040_total_income, 
