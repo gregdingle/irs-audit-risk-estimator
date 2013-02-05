@@ -9,8 +9,7 @@ If this is the case just clone the repo to a folder of your choice and do:
 
 And access the application on http://localhost:3000
 
-[1]:www.google.com
-[2]:www.google.com
+[1]:http://nodejs.org/
 
 
 
