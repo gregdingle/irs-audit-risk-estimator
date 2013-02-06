@@ -1,4 +1,10 @@
 <% layout('layout') -%>
+<script type="text/javascript">
+        _gaq.push(['_setCustomVar', 1, 'totalIncome', <%= totalIncome %>);
+        _gaq.push(['_setCustomVar', 2, 'scheduleATotalItemizedDeductions', <%= scheduleATotalItemizedDeductions %>);
+        _gaq.push(['_setCustomVar', 3, 'scheduleCTotalBusinessExpenses', <%= scheduleCTotalBusinessExpenses %>);
+        _gaq.push(['_setCustomVar', 4, 'scheduleFTotalFarmExpenses', <%= scheduleFTotalFarmExpenses %>);
+</script>
 <div class="row">
 	<div class="nine columns centered">
 		<h2>IRS TAX AUDIT ESTIMATOR</h2>

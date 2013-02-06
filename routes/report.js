@@ -69,6 +69,10 @@ exports.index = function(req, res){
 
   // RENDER THE IRS AUDIT ESTIMATES REPORT
   res.render('report', {
+	totalIncome: totalIncome,
+	scheduleATotalItemizedDeductions: scheduleATotalItemizedDeductions,
+	scheduleCTotalBusinessExpenses: scheduleCTotalBusinessExpenses,
+	scheduleFTotalFarmExpenses: scheduleFTotalFarmExpenses,
 	estimates: estimates 	    	
   });
 };
