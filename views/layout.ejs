@@ -23,10 +23,10 @@
 		      typeof scheduleATotalItemizedDeductions != 'undefined' &&
 		      typeof scheduleCTotalBusinessExpenses != 'undefined' &&
 		      typeof scheduleFTotalFarmExpenses != 'undefined') { %>
-			_gaq.push(['_setCustomVar', 1, 'totalIncome', '<%= totalIncome %>']);
-			_gaq.push(['_setCustomVar', 2, 'scheduleATotalItemizedDeductions', '<%= scheduleATotalItemizedDeductions %>']);
-			_gaq.push(['_setCustomVar', 3, 'scheduleCTotalBusinessExpenses', '<%= scheduleCTotalBusinessExpenses %>']);
-			_gaq.push(['_setCustomVar', 4, 'scheduleFTotalFarmExpenses', '<%= scheduleFTotalFarmExpenses %>']);
+			_gaq.push(['_setCustomVar', 1, 'totalIncome', '<%= totalIncome %>', 2]);
+			_gaq.push(['_setCustomVar', 2, 'scheduleATotalItemizedDeductions', '<%= scheduleATotalItemizedDeductions %>', 2]);
+			_gaq.push(['_setCustomVar', 3, 'scheduleCTotalBusinessExpenses', '<%= scheduleCTotalBusinessExpenses %>', 2]);
+			_gaq.push(['_setCustomVar', 4, 'scheduleFTotalFarmExpenses', '<%= scheduleFTotalFarmExpenses %>', 2]);
 		<% } %>
 		_gaq.push(['_trackPageview']);
 	</script>
