@@ -6,6 +6,7 @@
 var express = require('express')
   , routes = require('./routes')
   , report = require('./routes/report')
+  , cms = require('./routes/cms')
   , http = require('http')
   , path = require('path')
   , engine = require('ejs-locals');
@@ -31,6 +32,12 @@ app.configure('development', function(){
 
 app.get('/', routes.index);
 app.post('/report', report.index);
+
+// TODO: CUSTOM CMS
+app.get('/you-cant-deduct-that', cms.youCantDeductThat);
+app.get('/irs-audits-of-high-earners-increase-sharply', cms.irsAuditsOfHighEarnersIncreaseSharply);
+app.get('/irs-audit-statistics', cms.irsAuditStatistics);
+app.get('/beware-sharp-increase-in-audit-rates', cms.bewareSharpIncreaseInAuditRates);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));

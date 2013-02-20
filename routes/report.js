@@ -73,6 +73,7 @@ exports.index = function(req, res){
 	scheduleATotalItemizedDeductions: scheduleATotalItemizedDeductions,
 	scheduleCTotalBusinessExpenses: scheduleCTotalBusinessExpenses,
 	scheduleFTotalFarmExpenses: scheduleFTotalFarmExpenses,
-	estimates: estimates 	    	
+	estimates: estimates,
+	title: 'IRS audit risk estimator'
   });
 };
